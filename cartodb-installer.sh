@@ -4,16 +4,16 @@
 
 sudo locale-gen en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
-sudo apt-get install autoconf binutils-doc bison build-essential flex -yq
-sudo apt-get install git -yq
-sudo apt-get install python-software-properties -yq
+sudo apt-get install autoconf binutils-doc bison build-essential flex -y
+sudo apt-get install git -y
+sudo apt-get install python-software-properties -y
 
 #PostgreSQL
 
 sudo add-apt-repository ppa:cartodb/postgresql-9.3 -y
 sudo apt-get update
-sudo apt-get install libpq5 libpq-dev postgresql-client-9.3 postgresql-client-common -yq
-sudo apt-get install postgresql-9.3 postgresql-contrib-9.3 postgresql-server-dev-9.3 postgresql-plpython-9.3 -yq
+sudo apt-get install libpq5 libpq-dev postgresql-client-9.3 postgresql-client-common -y
+sudo apt-get install postgresql-9.3 postgresql-contrib-9.3 postgresql-server-dev-9.3 postgresql-plpython-9.3 -y
 
 sudo service postgresql restart
 
@@ -29,16 +29,16 @@ sudo make all install
 sudo add-apt-repository ppa:cartodb/gis -y
 sudo apt-get update
 
-sudo apt-get install proj proj-bin proj-data libproj-dev -yq
-sudo apt-get install libjson0 libjson0-dev python-simplejson -yq
-sudo apt-get install libgeos-c1v5 libgeos-dev -yq
-sudo apt-get install gdal-bin libgdal1-dev libgdal-dev -yq
-sudo apt-get install gdal2.1-static-bin -yq
+sudo apt-get install proj proj-bin proj-data libproj-dev -y
+sudo apt-get install libjson0 libjson0-dev python-simplejson -y
+sudo apt-get install libgeos-c1v5 libgeos-dev -y
+sudo apt-get install gdal-bin libgdal1-dev libgdal-dev -y
+sudo apt-get install gdal2.1-static-bin -y
 
 #PostGIS
 
-sudo apt-get install libxml2-dev -yq
-sudo apt-get install liblwgeom-2.1.8 postgis postgresql-9.3-postgis-2.2 postgresql-9.3-postgis-scripts -yq
+sudo apt-get install libxml2-dev -y
+sudo apt-get install liblwgeom-2.1.8 postgis postgresql-9.3-postgis-2.2 postgresql-9.3-postgis-scripts -y
 
 sudo createdb -T template0 -O postgres -U postgres -E UTF8 template_postgis
 sudo createlang plpgsql -U postgres -d template_postgis
@@ -53,14 +53,14 @@ sudo service postgresql restart
 sudo add-apt-repository ppa:cartodb/redis -y
 sudo apt-get update
 
-sudo apt-get install redis-server -yq
+sudo apt-get install redis-server -y
 
 #NodeJS
 
 sudo add-apt-repository ppa:cartodb/nodejs-010 -y
 sudo apt-get update
 
-sudo apt-get install nodejs -yq
+sudo apt-get install nodejs -y
 
 sudo npm install -g npm@2.14.16
 
@@ -79,7 +79,7 @@ cd
 git clone git://github.com/CartoDB/Windshaft-cartodb.git
 cd Windshaft-cartodb
 
-sudo apt-get install libpango1.0-dev -yq
+sudo apt-get install libpango1.0-dev -y
 npm install
 
 cp config/environments/development.js.example config/environments/development.js
@@ -92,7 +92,7 @@ tar -xzvf ruby-install-0.5.0.tar.gz
 cd ruby-install-0.5.0/
 sudo make install
 
-sudo apt-get install libreadline6-dev openssl -yq
+sudo apt-get install libreadline6-dev openssl -y
 
 sudo ruby-install ruby 2.2.3
 
@@ -111,8 +111,8 @@ sudo wget  -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
 sudo python /tmp/get-pip.py
 
 
-sudo apt-get install python-all-dev -yq
-sudo apt-get install imagemagick unp zip-yq
+sudo apt-get install python-all-dev -y
+sudo apt-get install imagemagick unp zip -y
 
 RAILS_ENV=development bundle install
 npm install
